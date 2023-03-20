@@ -1,5 +1,6 @@
 const taskList = document.getElementById('task-list');
 const addButton = document.getElementById('add-task');
+const newInput = document.getElementById('new-task');
 
 // local storage 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -9,6 +10,11 @@ addTodoList();
 
 
 addButton.addEventListener('click', () => {
+
+   if(newInput.value===""){
+    alert("please enter somthing")
+   }else{
+    
   const newTaskInput = document.getElementById('new-task');
 
   const newTaskValue = newTaskInput.value;
@@ -23,6 +29,7 @@ addButton.addEventListener('click', () => {
 
   // add the updated task list
   addTodoList();
+   }
 });
 
 function addTodoList() {
